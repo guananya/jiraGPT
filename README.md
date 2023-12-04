@@ -39,3 +39,6 @@ Once this is done, run the app:
 
 ### Jupyter Notebook
 Change the variables in the first cell for the same variables mentioned in the 'How to use' section, following the same steps! 
+
+### Future additions 
+I'd want to make this more robust to error handling and explore efficiency. For example, for now, I add a slight lag to wait for the message to propogate through which may not be the best approach. I also want to add file support- it would be great to be able to upload, for example, a file of your code and have the model generate detailed ticket descriptions using that too. This added context could boost the quality of response significantly! Furthermore, I'd explore how to better format the output going into the Jira API call- right now it looks very raw, and I'd work more on refining that. 
