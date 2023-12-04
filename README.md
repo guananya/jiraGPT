@@ -17,7 +17,7 @@ Here, make your first project by clicking "Create Project" on the top right corn
 
 <img width="1364" alt="image" src="https://github.com/guananya/jiraGPT/assets/93958307/4ecd9406-5cf7-4aa5-9de4-668a2e86f77d">
 
-Once here, copy the 'KEY' variable- you can see this later too, but this will be your input to the 'Jira Project Name' on the streamlit app. You can also see this in your link (for example, https://ananya25.atlassian.net/jira/software/projects/TREEH/boards/2 has TREEH here). From this link, you also get the 'Jira Link' that needs to be inputted into the streamlit app- here it is https://ananya25.atlassian.net/, but your's will be with your 'company name' too! For your 'Jira Username', input in the email address you used while creating your Jira account. Now, go to https://id.atlassian.com/manage-profile/security/api-tokens to generate an API token which will go into your 'Jira API Key' field. 
+Once here, copy the 'KEY' variable- you can see this later too, but this will be your input to the 'Jira Project Name' on the streamlit app. You can also see this in your link (for example, https://ananya25.atlassian.net/jira/software/projects/TREEH/boards/2 has TREEH here). From this link, you also get the 'Jira Link' that needs to be inputted into the streamlit app- here it is https://ananya25.atlassian.net/, but yours will be with your 'company name' too! For your 'Jira Username', input in the email address you used while creating your Jira account. Now, go to https://id.atlassian.com/manage-profile/security/api-tokens to generate an API token which will go into your 'Jira API Key' field. 
 
 Now, when you click 'Add to Jira', if everything goes well you'll be able to see the generated tickets directly in your Kanban board's issues!!! 
 
@@ -25,14 +25,15 @@ Now, when you click 'Add to Jira', if everything goes well you'll be able to see
 
 Download the app.py:
 
-''' git clone '''
+``` git clone git@github.com:guananya/jiraGPT.git```
 
 Then, once in the project directory, install the requirements
 
-''' pip install -r requirements.txt '''
+``` pip install -r requirements.txt ```
 
 Once this is done, run the app:
 
-''' streamlit run app.py '''
+``` streamlit run app.py ```
 
 ### Jupyter Notebook
+Change the variables in the first cell for the same variables mentioned in the 'How to use' section, following the same steps! 
