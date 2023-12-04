@@ -86,7 +86,7 @@ client = OpenAI(api_key=openAIKey)
 
 # Button to generate Jira ticket
 if st.button('Generate Ticket'):
-    instruction = "Your instruction text here"
+    instruction = "You are on the engineering team managing tickets. You transform brief software engineering task titles into a fully fleshed ticket that can be used in things like Jira. You should take in a short engineering task as input. You should output a completed scope for the task that could include descriptions, acceptance criteria, sub-tasks, assumptions, and any other relevant details.You output should be json of 'summary' and 'fleshedOut' only."
     assistant = makeAssistant(instruction + custom_assistant, client)
     st.session_state.summ, st.session_state.desc = getOutput(assistant, task_description)
     st.markdown("### Generated Summary")
