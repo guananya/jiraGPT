@@ -5,6 +5,9 @@ https://jiragpt-zwuq42uhiu7beux8fj45mw.streamlit.app/
 
 ### Demo Video
 
+[Watch our demo video](demo.mp4)
+
+
 ### How to use
 First, get your Open AI API key from the following website: https://platform.openai.com/api-keys. You'll be asked to log in and then click on "Create secret key"! This code, as you may see, doesn't store your key so is (fingers crossed) safe for you to input your API key into!
 <img width="261" alt="image" src="https://github.com/guananya/jiraGPT/assets/93958307/5f149dad-6760-430e-bb06-31dd4c0fbbf5">
