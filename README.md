@@ -5,7 +5,7 @@ https://jiragpt-zwuq42uhiu7beux8fj45mw.streamlit.app/
 
 ### Demo Video
 
-[Watch demo video](https://youtu.be/5DLDlpSO0VY)
+[![Demo video](https://i.stack.imgur.com/Vp2cE.png)](https://youtu.be/5DLDlpSO0VY)
 
 
 ### How to use
