@@ -82,7 +82,7 @@ custom_assistant = st.text_input("Instructing the Assistant (optional)", placeho
 openAIKey = st.text_input("Open AI API Key", placeholder="Enter your Open AI API key (not stored anywhere)")
 
 # Initialize OpenAI client
-client = OpenAI(api_key="openAIKey")
+client = OpenAI(api_key=openAIKey)
 
 # Button to generate Jira ticket
 if st.button('Generate Ticket'):
