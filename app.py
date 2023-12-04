@@ -66,13 +66,7 @@ def addToJira(summ, desc, jira, jiraProjectName):
 
 # Streamlit app setup
 st.title('Jira Ticket Creator')
-
-# Input fields for Jira connection
-st.subheader('Connect to Jira')
-jiraUsername = st.text_input("Jira Username", placeholder="Enter your Jira username")
-jiraAPI = st.text_input("Jira API Key", placeholder="Enter your Jira API key", type="password")
-jiraOptions = st.text_input("Jira Link", placeholder="Enter your Jira link")
-jiraProjectName = st.text_input("Jira Project Name", placeholder="Enter your Jira project name")
+st.text('This is a web app that allows you to take one-line descriptions of a task and make fleshed out software implementation tickets that gets uploaded to your Jira!')
 
 # Input field for task description
 st.subheader('Task Input')
@@ -94,17 +88,32 @@ if st.button('Generate Ticket'):
     st.markdown("### Generated Description")
     st.write(st.session_state.desc)
 
+# Input fields for Jira connection
+st.subheader('Connect to Jira')
+jiraUsername = st.text_input("Jira Username", placeholder="Enter your Jira username")
+jiraAPI = st.text_input("Jira API Key", placeholder="Enter your Jira API key", type="password")
+jiraOptions = st.text_input("Jira Link", placeholder="Enter your Jira link")
+jiraProjectName = st.text_input("Jira Project Name", placeholder="Enter your Jira project name")
+
+
 # Button to add ticket to Jira
 if st.button('🚀 Add to Jira'):
-    jira = JIRA(options={'server': jiraOptions}, basic_auth=(jiraUsername, jiraAPI)) 
-    if st.session_state.summ and st.session_state.desc:
-        addToJira(st.session_state.summ, st.session_state.desc, jira, jiraProjectName)
-        st.success("Ticket successfully added to Jira!")
+    # Check if all Jira fields are filled
+    if jiraUsername and jiraAPI and jiraOptions and jiraProjectName:
+        jira = JIRA(options={'server': jiraOptions}, basic_auth=(jiraUsername, jiraAPI)) 
+        if st.session_state.summ and st.session_state.desc:
+            addToJira(st.session_state.summ, st.session_state.desc, jira, jiraProjectName)
+            st.success("Ticket successfully added to Jira!")
+        else:
+            st.error("No ticket information available. Please generate a ticket first.")
     else:
-        st.error("No ticket information available. Please generate a ticket first.")
+        st.error("Please enter all Jira variables details before adding to Jira.")
 
 # Optional: Display all issues in the Jira project
 if st.checkbox('Show All Issues in Project'):
-    jira = JIRA(options={'server': jiraOptions}, basic_auth=(jiraUsername, jiraAPI)) 
-    for singleIssue in jira.search_issues('project = ' + jiraProjectName): 
-        st.write(f'{singleIssue.key}: {singleIssue.fields.summary}')
+    if jiraUsername and jiraAPI and jiraOptions and jiraProjectName:
+        jira = JIRA(options={'server': jiraOptions}, basic_auth=(jiraUsername, jiraAPI)) 
+        for singleIssue in jira.search_issues('project = ' + jiraProjectName): 
+            st.write(f'{singleIssue.key}: {singleIssue.fields.summary}')
+    else:
+        st.error("Please enter all Jira variables details before connecting to Jira.")
