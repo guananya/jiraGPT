@@ -73,7 +73,7 @@ st.subheader('Task Input')
 task_description = st.text_input("Task Description", placeholder="Enter the task")
 custom_assistant = st.text_input("Instructing the Assistant (optional)", placeholder="Add specific things you want from your assistant. For example, sub tasks or task deadlines.")
 
-openAIKey = st.text_input("Open AI API Key", placeholder="Enter your Open AI API key (not stored anywhere)")
+openAIKey = st.text_input("Open AI API Key", placeholder="Enter your Open AI API key (not stored anywhere)", type="password")
 
 # Initialize OpenAI client
 client = OpenAI(api_key=openAIKey)
