@@ -1,5 +1,7 @@
 # jiraGPT
-Make fleshed out project tickets to add to Jira from a simple task description!
+Make fleshed out project tickets to add to Jira from a simple task description! Try it now:
+
+https://jiragpt-zwuq42uhiu7beux8fj45mw.streamlit.app/
 
 ### Demo Video
 
